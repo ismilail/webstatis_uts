@@ -126,31 +126,6 @@ body {
     justify-content: center;
     align-items:center;
 }
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -25%;
-    width: 25%;
-    height: 100%;
-    background-color: rgb(196, 184, 184);
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
-    transition: right 0.3s ease;
-}
-
-.widget {
-    margin-bottom: 20px;
-}
-
-.widget h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.video-widget iframe {
-    border: none;
-}
 
 .container {
     position: absolute;
@@ -388,25 +363,6 @@ body {
             <a href="kontak.html">Kontak</a>
         </nav>
 
-        <div class="menu-icon">
-            <a href="#" id="closeSidebar"><i class='bx bx-menu'></i></a>
-        </div>
-
-        <div class="sidebar">
-        <body onLoad="realtimeClock()">
-            <div class="widget clock-widget">
-                <h3>Clock Widget</h3>
-                <div id="clock"></div>
-            </div>
-        
-            <div class="widget video-widget">
-                <h3>Video Profil Museum Basoeki Abdullah</h3>
-                <iframe width="300" height="250" src="https://www.youtube.com/embed/MvJoXT1JGLo?si=tmsCtCjyLG6ZOg_u" 
-                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-                gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-        
-        </div>
     </header>
 
     <div class="background"></div>
@@ -471,45 +427,6 @@ body {
 
 <script>
 
-function realtimeClock() {
-    var rtClock = new Date();
-
-    var hours = rtClock.getHours();
-    var minutes = rtClock.getMinutes();
-    var second = rtClock.getSeconds();
-
-    var amPm = ( hours < 12 ) ? "AM" : "PM";
-
-    hours = (hours > 12) ? hours - 12 : hours;
-
-    hours = ("0" + hours).slice(-2);
-    minutes = ("0" + minutes).slice(-2);
-    seconds = ("0" + second).slice(-2);
-
-    document.getElementById('clock').innerHTML =
-        hours + " : " + minutes + " : " + seconds + " " + amPm;
-    var t = setTimeout(realtimeClock, 500);
-
-}
-
-
-    document.addEventListener("DOMContentLoaded", function() {
-            function toggleSidebar() {
-                var sidebar = document.querySelector(".sidebar");
-                sidebar.style.right = sidebar.style.right === "0%" ? "-25%" : "0%";
-            }
-
-            var menuIcon = document.getElementById("menu");
-            var closeSidebar = document.getElementById("closeSidebar");
-
-            if (menuIcon) {
-                menuIcon.addEventListener("click", toggleSidebar);
-            }
-
-            if (closeSidebar) {
-                closeSidebar.addEventListener("click", toggleSidebar);
-            }
-        });
 </script>
 
 </body>
